@@ -1,0 +1,189 @@
+.container {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  height: 100vh;
+  width: 100vw;
+}
+
+a {
+  text-decoration: none;
+  color: #C67615;
+}
+
+.image-login-box {
+  background-image: url(../../images/bannerLogin.jpg);
+  background-size: cover; 
+}
+
+.login-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f1f1f1;
+}
+
+.login-box > .login-icons {
+  justify-content: center;
+  align-items: center;
+}
+
+.login-box-content {
+  height: 70%;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+
+.input-login {
+  display: flex;
+  flex-direction: column;
+  margin-top: 16px;
+}
+
+.text-wellcome > p {
+  color: #e08b0a;
+  font-size: 23px;
+  font-weight: 500;
+}
+
+.input-login > input {
+  height: 2rem;
+  width: 20rem;
+  border-radius: 8px;
+  border: 1px solid #C67615;
+  padding: .4rem;
+}
+
+.input-login > span {
+  margin: none;
+  padding-left: 6px;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #C67615;
+}
+
+.login-icons, .text-login-with {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding-top: 8px;
+}
+
+.text-login-with {
+  font-size: 10px;
+}
+
+.text-forgot-password {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 14px;
+  color: #C67615;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.text-register {
+  font-size: 16px;
+  color: #C67615;
+  font-weight: bold;
+  display: flex;
+  margin-top: 16px;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.login-icons > img{
+  width: 28px;
+  height: 28px;
+  margin: 4px 6px;
+  cursor: pointer;
+}
+
+.login-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  height: 3rem;
+  margin-top: 40px;
+}
+
+.login-section > button{
+  font-size:15px;
+  font-family:Arial;
+  width:90%;
+  height: 2rem;
+  border-width:1px;
+  color:rgba(255, 255, 255, 1);
+  font-weight:bold;
+  border-radius: 4px;
+  background-color: #e08b0a;
+}
+
+.login-section > button:hover {
+  background: linear-gradient(rgba(212, 172, 35, 1), rgba(252, 150, 1, 1));
+}
+
+
+@media screen and (min-width: 0px) and (max-width: 496px) {
+	.container {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    justify-content: center;
+  }
+  
+  .image-login-box {
+    display: none;
+  }
+
+  .input-login > input {
+    height: 3rem;
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid #C67615;
+    padding: .4rem;
+    box-sizing: border-box;
+  }
+
+  .input-login > span {
+    color: #333;
+    text-align: left;
+  }
+
+
+  .text-wellcome > p {
+    color: #333;
+  }
+
+  .login-box-content {
+    background-color: rgba(255, 255, 255, 0.486);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    height: auto;
+    width: 80%;
+    border-radius: 4px;
+    -webkit-box-shadow: -8px 21px 59px -7px rgba(0,0,0,0.75);
+    -moz-box-shadow: -8px 21px 59px -7px rgba(0,0,0,0.75);
+    box-shadow: -8px 21px 59px -7px rgba(0,0,0,0.75);
+  }
+  .login-box {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    background-color: #f1f1f1;
+    background-image: url(../../images/bannerLoginMobile.jpg);
+    background-size: cover; 
+  }
+
+  .text-forgot-password, .text-register, a {
+    color: #333;
+    text-decoration: none;
+  }
+  
+}
