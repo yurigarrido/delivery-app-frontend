@@ -6,7 +6,7 @@
 }
 
 .image-register-box {
-  background-image: url(../../images/bannerRegister.jpg);
+  background-image: url(../../images/bannerCreate.jpg);
   background-size: cover; 
 }
 
@@ -39,7 +39,7 @@
 }
 
 .text-wellcome > p {
-  color: #e08b0a;
+  color: #D1231F;
   font-size: 23px;
   font-weight: 500;
 }
@@ -48,7 +48,7 @@
   height: 2rem;
   width: 20rem;
   border-radius: 8px;
-  border: 1px solid #C67615;
+  border: 1px solid #D1231F;
   padding: .4rem;
 }
 
@@ -58,7 +58,7 @@
   font-size: 14px;
   font-weight: bold;
   text-transform: uppercase;
-  color: #C67615;
+  color: #D1231F;
 }
 
 .register-icons, .text-register-with {
@@ -77,14 +77,14 @@
   display: flex;
   justify-content: flex-end;
   font-size: 14px;
-  color: #C67615;
+  color: #D1231F;
   font-weight: bold;
   cursor: pointer;
 }
 
 .text-register {
   font-size: 16px;
-  color: #C67615;
+  color: #D1231F;
   font-weight: bold;
   display: flex;
   margin-top: 16px;
@@ -117,11 +117,11 @@
   color:rgba(255, 255, 255, 1);
   font-weight:bold;
   border-radius: 4px;
-  background-color: #e08b0a;
+  background-color: #D1231F;
 }
 
 .register-section > button:hover {
-  background: linear-gradient(rgba(212, 172, 35, 1), rgba(252, 150, 1, 1));
+  background: linear-gradient(rgb(238, 62, 62), rgb(221, 16, 16));
 }
 
 
@@ -141,7 +141,7 @@
     height: 3rem;
     width: 100%;
     border-radius: 8px;
-    border: 1px solid #C67615;
+    border: 1px solid #D1231F;
     padding: .4rem;
     box-sizing: border-box;
   }
