@@ -26,7 +26,7 @@ const Register = () => {
       <div className="image-register-box" />
       <div className="register-box">
         <div className="register-box-content">
-          <section className="text-wellcome">
+          <section className="text-wellcome-register">
             <p>Seja Bem vindo(a)!</p>
             <span>Cadastre-se para entrar na plataforma</span>
           </section>
