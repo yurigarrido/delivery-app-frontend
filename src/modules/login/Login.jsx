@@ -43,7 +43,7 @@ const Login = () => {
           />
           <span className="text-forgot-password">esqueceu a senha?</span>
           <div className="login-section">
-            <button type="submit" onClick={ () => login(email, password) }>
+            <button type="submit" onClick={ () => dispatch(login(email, password)) }>
               Entrar
             </button>
           </div>

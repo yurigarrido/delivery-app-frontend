@@ -12,11 +12,15 @@ import { Provider } from 'react-redux';
 import store from './store'
 import Login from './modules/login/Login';
 import Register from './modules/register/register';
+import Modal from './components/modal/modal';
+import Toast from './components/toasts/toast';
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
       <BrowserRouter>
+        <Modal />
+        <Toast />
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register/>} />
