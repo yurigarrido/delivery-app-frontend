@@ -7,6 +7,108 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+@keyframes progressBar {
+  0% {
+    transform: scaleX(1);
+  }
+  100% {
+    transform: scaleX(0);
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    top: -90px;
+  }
+  100% {
+    top: 150px;
+  }
+}
+
+@keyframes slideOut {
+  0% {
+    top: 110px;
+  }
+  100% {
+    top: -90px;
+  }
+}
+
+.toast-container {
+  position: 'fixed';
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, .7);
+  z-index: 1000;
+  display: flex;
+}
+
+.sucess {
+  background-color: rgb(4, 218, 4) !important;
+}
+
+.sucess > div > button{
+  background-color: rgb(99, 233, 99) !important;
+  color: #FFF;
+}
+
+
+.error {
+  background-color: rgb(248, 39, 2) !important;
+}
+
+.error > div > button{
+  background-color: rgb(235, 95, 71) !important;
+  color: #FFF;
+}
+
+.warning {
+  background-color: rgb(248, 162, 2) !important;
+  
+}
+
+.warning > div > button{
+  background-color: rgb(247, 183, 65) !important;
+  color: #FFF;
+}
+
+.toast {
+  color: #FFF;
+  font-weight: 600;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  border-radius: 4px;
+  transform: translate(-50%, -50%);
+  background-color: #FFF;
+  padding: 16px;
+  z-index: 1000;
+  min-width: 350px;
+  max-width: 370px;
+  box-sizing: border-box;
+  animation: 0.5s slideIn cubic-bezier(0.3, 1, 0.3, 1.2) forwards, 0.45s slideOut 4s cubic-bezier(0.3, -0.2, 0.3, -0.4) forwards;
+  -webkit-box-shadow: -8px 21px 59px -7px rgba(0,0,0,0.75);
+  -moz-box-shadow: -8px 21px 59px -7px rgba(0,0,0,0.75);
+  box-shadow: -8px 21px 59px -7px rgba(0,0,0,0.75);
+}
+
+.toast > div > button {
+  position: fixed;
+  border: none;
+  top: 0;
+  right: 0;
+  width: 25px;
+  height: 25px;
+  padding: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
