@@ -1,15 +1,13 @@
 import React from 'react'
-import { useEffect } from 'react'
+import { useContext } from 'react'
 import ReactDom from 'react-dom'
-import { useDispatch, useSelector } from 'react-redux'
-import { removeToast, toasts } from './toast.slice'
+import { LayoutContext } from '../../context/LayoutContext'
 
 export default function Toast() {
-  const dispatch = useDispatch()
-  const toastList = useSelector(toasts)
+  const { toasts } = useContext(LayoutContext)
 
 
-  toastList.forEach((toast) => {
+  toasts.forEach((toast) => {
     console.log(toast)
     setTimeout(() => {
       dispatch(removeToast(toast.id))
@@ -20,7 +18,7 @@ export default function Toast() {
     <>
       <div className='toast-container' />
       <div >
-        {toastList.map((toast, index) => {
+        {toasts.map((toast, index) => {
           return (
             <div key={index} className={`toast ${toast.type}`}>
               <div>

@@ -4,15 +4,12 @@ import './register.css';
 import maca from '../../images/maca.png';
 import google from '../../images/google.png';
 import facebook from '../../images/facebook.png';
-import { useDispatch, useSelector } from 'react-redux';
 import { registerUser } from '../../data/api/register.api';
-import { onChangeInput } from './register.slice'
-import Modal from '../../components/modal/modal';
 
 const Register = () => {
-  const dispatch = useDispatch()
-  const { email, password, name } = useSelector((state) => state.register)
-  const [isOpen, setIsOpen] = useState(false)
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [name, setName] = useState('')
   
   const createUser = async () => {
     const payload = {
@@ -39,7 +36,7 @@ const Register = () => {
             name="name"
             title="Nome"
             cy="input_nome_register"
-            action={ (e) => dispatch(onChangeInput({name: e.name, value: e.value})) }
+            action={ (e) => setEmail(e.value) }
             className="input-register"
           />
           <Input
@@ -49,7 +46,7 @@ const Register = () => {
             name="email"
             title="Email"
             cy="input_email_register"
-            action={ (e) => dispatch(onChangeInput({name: e.name, value: e.value})) }
+            action={ (e) => setPassword(e.value) }
             className="input-register"
           />
           <Input
@@ -59,7 +56,7 @@ const Register = () => {
             name="password"
             title="Senha"
             cy="input_senha_register"
-            action={ (e) => dispatch(onChangeInput({name: e.name, value: e.value})) }
+            action={ (e) => setName(e.value) }
             className="input-register"
           />
           <div className="register-section">
