@@ -1,17 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Input from '../../components/Input';
 import './register.css';
 import maca from '../../images/maca.png';
 import google from '../../images/google.png';
 import facebook from '../../images/facebook.png';
-import { useDispatch, useSelector } from 'react-redux';
 import { registerUser } from '../../data/api/register.api';
-import { onChangeInput } from './register.slice'
 
 const Register = () => {
-  const dispatch = useDispatch()
-  const { email, password, name } = useSelector((state) => state.register)
-
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [name, setName] = useState('')
+  
   const createUser = async () => {
     const payload = {
       name,
@@ -26,7 +25,7 @@ const Register = () => {
       <div className="image-register-box" />
       <div className="register-box">
         <div className="register-box-content">
-          <section className="text-wellcome">
+          <section className="text-wellcome-register">
             <p>Seja Bem vindo(a)!</p>
             <span>Cadastre-se para entrar na plataforma</span>
           </section>
@@ -71,6 +70,11 @@ const Register = () => {
             <img src={ facebook } alt="iconLoginApple" />
             <img src={ google } alt="iconLoginApple" />
           </div>
+          {/* <button onClick={() => setIsOpen(true)}>Open Modal</button>
+
+          <Modal open={isOpen} onClose={() => setIsOpen(false)}>
+            Fancy Modal
+          </Modal> */}
         </div>
       </div>
     </div>

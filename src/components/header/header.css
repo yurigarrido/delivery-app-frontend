@@ -1,0 +1,121 @@
+@keyframes flicker {
+    
+  0%, 18%, 22%, 25%, 53%, 57%, 100% {
+
+    text-shadow:
+    0 0 7px #fff,
+    0 0 10px rgb(8, 0, 0),
+    0 0 21px rgba(219, 102, 7, 0.699),
+    0 0 32px rgb(255, 197, 0),
+    0 0 72px rgb(255, 197, 0),
+    0 0 82px rgb(255, 197, 0),
+    0 0 102px rgb(255, 197, 0),
+    0 0 121px rgb(255, 197, 0);
+  
+  }
+  
+  20%, 55% {        
+      text-shadow: none;
+  }    
+}
+
+.header-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 4rem;
+  width: 100%;
+  background-color: #333;
+  color: #f1f1f1;  
+}
+
+#title-header {
+  color: #fff;
+  animation: flicker 8s infinite alternate;
+  margin-left: 16px;
+  font-size: 21px;
+  color: rgb(255, 255, 255);
+  font-family: 'Mochiy Pop One', sans-serif;
+  cursor: default;
+}
+
+.header-container > div {
+  padding: 16px;
+  font-weight: 600;
+}
+
+.header-container > div:hover {
+  padding: 16px;
+  color: rgb(255, 197, 0);
+}
+
+.products, .requests, .item, .user, .logout {
+  text-transform: capitalize;
+  cursor: pointer;
+}
+
+
+
+
+
+@media screen and (min-width: 0px) and (max-width: 496px) {
+  .header-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 5rem;
+    width: 100vw;
+    position: fixed;
+    z-index: 2;
+  }
+
+  #title-header {
+    color: #fff;
+    animation: flicker 8s infinite alternate;
+    position: relative;
+    top: 0;
+    left: 25vw;
+    margin: 0 auto;
+    font-size: 21px;
+    color: rgb(255, 255, 255);
+    font-family: 'Mochiy Pop One', sans-serif;
+  }
+
+
+.menu > img {
+  height: 30px;
+  width: 30px;
+  color: #f1f1f1;
+}
+
+  .left-menu {
+    display: none;
+  }
+  .left-menu-open {
+    width: 60vw;
+    background-color: #333;
+    color: #f1f1f1;
+    height: calc(100vh);
+    position: fixed;
+    top: 0;
+    z-index: 5;
+  }
+
+  .menu-container {
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+  }
+
+  .menu-container > div {
+    height: 3rem;
+  }
+
+  .left-menu-open > button {
+    position: absolute;
+    right: 8px;
+    top: 16px;
+  }
+}

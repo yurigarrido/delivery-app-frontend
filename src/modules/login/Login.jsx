@@ -1,20 +1,41 @@
-import React from 'react';
+import React, { useContext, useState} from 'react';
 import Input from '../../components/Input';
 import './login.css';
 import maca from '../../images/maca.png';
 import google from '../../images/google.png';
 import facebook from '../../images/facebook.png';
-import { useDispatch, useSelector } from 'react-redux';
-import { onChangeInput } from './login.slice';
 import { login } from '../../data/api/login.api';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../context/AuthContext';
+import { Navigate } from "react-router-dom";
 
 const Login = () => {
-  const dispatch = useDispatch()
-  const { email, password } = useSelector((state) => state.login)
+  const {auth, setAuth, setUser} = useContext(AuthContext)
+
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+
+  const handleOnClick = async () => {
+    const isLogged = await login(email, password)
+    console.log(isLogged)
+    if (isLogged.token) {
+      setAuth(true)
+      setUser(isLogged)
+    }
+    if (!isLogged) { 
+      setAuth(false)
+      createToast({
+        content: 'Login feito com sucesso',
+        timer: 5000,
+        type: 'sucess'
+      })
+    }
+  }
+
 
   return (
     <div className="container">
+      { auth && <Navigate to='/home' />}
       <div className="image-login-box" />
       <div className="login-box">
         <div className="login-box-content">
@@ -28,7 +49,7 @@ const Login = () => {
             name="email"
             title="Email"
             cy="input_email_login"
-            action={ (e) => dispatch(onChangeInput({name: e.name, value: e.value})) }
+            action={ (e) => setEmail(e.value) }
             className="input-login"
           />
           <Input
@@ -38,12 +59,12 @@ const Login = () => {
             name="password"
             title="Senha"
             cy="input_senha_login"
-            action={ (e) => dispatch(onChangeInput({name: e.name, value: e.value})) }
+            action={ (e) => setPassword(e.value) }
             className="input-login"
           />
           <span className="text-forgot-password">esqueceu a senha?</span>
           <div className="login-section">
-            <button type="submit" onClick={ () => login(email, password) }>
+            <button type="submit" onClick={ () => handleOnClick() }>
               Entrar
             </button>
           </div>

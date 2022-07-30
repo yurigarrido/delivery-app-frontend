@@ -1,16 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './App.css';
-import rockGlass from './images/rockGlass.svg';
+import { AuthContext } from './context/AuthContext';
+import PrivateRouters from './routes/private.routes';
+import PublicRouters from './routes/public.routes';
 
 function App() {
-  return (
-    <div className="App">
-      <span className="logo">TRYBE</span>
-      <object className="rocksGlass" type="image/svg+xml" data={ rockGlass }>
-        Glass
-      </object>
-    </div>
-  );
+  const { auth } = useContext(AuthContext);
+  return auth ? <PrivateRouters/> : <PublicRouters/>
 }
 
 export default App;
