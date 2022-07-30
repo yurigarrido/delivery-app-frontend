@@ -37,7 +37,7 @@ const Register = () => {
             name="name"
             title="Nome"
             cy="input_nome_register"
-            action={ (e) => dispatch(onChangeInput({name: e.name, value: e.value})) }
+            action={ (e) => setName(e.value) }
             className="input-register"
           />
           <Input
@@ -47,7 +47,7 @@ const Register = () => {
             name="email"
             title="Email"
             cy="input_email_register"
-            action={ (e) => dispatch(onChangeInput({name: e.name, value: e.value})) }
+            action={ (e) => setEmail(e.value) }
             className="input-register"
           />
           <Input
@@ -57,7 +57,7 @@ const Register = () => {
             name="password"
             title="Senha"
             cy="input_senha_register"
-            action={ (e) => dispatch(onChangeInput({name: e.name, value: e.value})) }
+            action={ (e) => setPassword(e.value) }
             className="input-register"
           />
           <div className="register-section">
